@@ -14,9 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# from django.contrib import admin
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    #    path('admin/', admin.site.urls),
+        path('admin/', admin.site.urls), # / (trailing forward slash) is for django to redirect pages to pages
+        #without a trailing forward slash in our browser.
+        path('',include('blog.urls')), #you can change the route to create easy to use live testing
+        # for example 'blog_dev. If we leave '' empty, blog home page views will be the default homepage.
+
 ]
