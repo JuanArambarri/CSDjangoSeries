@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from users import views as user_views
 
 urlpatterns = [
         path('admin/', admin.site.urls), # / (trailing forward slash) is for django to redirect pages to pages
         #without a trailing forward slash in our browser.
+        path('register/',user_views.register, name='register'),
         path('',include('blog.urls')), #you can change the route to create easy to use live testing
         # for example 'blog_dev. If we leave '' empty, blog home page views will be the default homepage.
-
 ]
