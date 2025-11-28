@@ -135,3 +135,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login' #redirects to login if trying to access things we are unable to access
 ### ?next=/profile/ Will remember the page I was trying to access
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('USER_EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('USER_PASSWORD')
+
